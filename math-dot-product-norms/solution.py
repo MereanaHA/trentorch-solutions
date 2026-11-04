@@ -9,7 +9,7 @@ def dot_product(a: np.ndarray, b: np.ndarray) -> float:
 
     A single scalar, the sum of the elementwise product.
     """
-    return np.sum(a*b)
+    return float(np.sum(a*b))
     pass
 
 
@@ -19,7 +19,7 @@ def l1_norm(x: np.ndarray) -> float:
 
         ||x||_1 = sum_i(|x_i|)
     """
-    return np.sum(np.abs(x))
+    return float(np.sum(np.abs(x)))
     pass
 
 
@@ -29,7 +29,7 @@ def l2_norm(x: np.ndarray) -> float:
 
         ||x||_2 = sqrt(sum_i(x_i^2)) = sqrt(x . x)
     """
-    return np.sqrt(np.sum(x*x))
+    return float(np.sqrt(np.sum(x*x)))
     pass
 
 
@@ -39,5 +39,5 @@ def linf_norm(x: np.ndarray) -> float:
 
         ||x||_inf = max_i(|x_i|)
     """
-    return np.max(np.abs(x))
+    return float(np.max(np.abs(x)))
     pass
