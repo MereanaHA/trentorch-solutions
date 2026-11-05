@@ -9,15 +9,8 @@ def bigram_counts(words: list[str]) -> tuple[np.ndarray, list[str]]:
     """
     # TODO: Build itos and a symbol -> index map.
     # TODO: Walk the adjacent pairs of each wrapped word and count them.
-    itos=[]
-    for word in words :
-        for letter in set(word):
-            if letter not in itos :
-                itos.append(letter)
-    itos = ['.']+sorted(itos)
-    dic={}
-    for i in range(len(itos)):
-        dic[itos[i]]=i
+    itos=['.']+sorted(set("".join(words)))
+    dic={letter: i for i,letter in enumerate(itos)}
     counts=np.zeros((len(itos),len(itos)),dtype=int)
     for word in words :
         word='.'+word+'.'
